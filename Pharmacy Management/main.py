@@ -14,7 +14,7 @@ import random
 import sqlite3
 
 
-conn = sqlite3.connect("drug_data.db",check_same_thread=False)
+conn = sqlite3.connect("data.db",check_same_thread=False)
 c = conn.cursor()
 
 def cust_create_table():
@@ -113,7 +113,7 @@ def order_view_all_data():
 def admin():
 
 
-    st.title("Pharmacy Database Dashboard")
+    st.title("Pharmacy Tracker")
     menu = ["Drugs", "Customers", "Orders", "About"]
     choice = st.sidebar.selectbox("Menu", menu)
 
@@ -205,7 +205,7 @@ def admin():
                 order_clean_df = pd.DataFrame(order_result, columns=["Name", "Items","Qty" ,"ID"])
                 st.dataframe(order_clean_df)
     elif choice == "About":
-        st.subheader("DBMS Mini Project")
+        st.subheader("DBMS Project")
         st.subheader("Aaditya (102117021), Shubham(102117007), Rahul(102117011), Aryan(102117030)")
 
 
@@ -249,13 +249,13 @@ def customer(username, password):
 
 
         st.subheader("Drug: " + drug_result[1][0])
-        img = Image.open('images/strepsils.JPG')
+        img = Image.open('images/strepsils.jpg')
         st.image(img, width=100 , caption="Rs. 10/-")
         strepsils = st.slider(label="Quantity",min_value=0, max_value=5, key= 2)
         st.info("When to USE: " + str(drug_result[1][2]))
 
         st.subheader("Drug: " + drug_result[2][0])
-        img = Image.open('images/vicks.JPG')
+        img = Image.open('images/vicks.jpg')
         st.image(img, width=100, caption="Rs. 65/-")
         vicks = st.slider(label="Quantity",min_value=0, max_value=5, key=3)
         st.info("When to USE: " + str(drug_result[2][2]))
