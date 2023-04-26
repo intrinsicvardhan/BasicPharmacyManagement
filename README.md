@@ -15,7 +15,7 @@ This project is a pharmacy database dashboard using Streamlit, SQLite, and Pytho
 ## Getting Started: 
  <bold>To run this project</bold>
   - Clone the repository: `git clone https://github.com/intrinsicvardhan/BasicPharmacyManagement.git`
-  - Run the application using `streamlit run app.py`
+  - Run the application using `streamlit run main.py`
 
 ## Modules Used
  - Streamlit: a Python web framework for creating interactive web applications 
