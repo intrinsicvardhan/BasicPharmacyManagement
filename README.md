@@ -1,4 +1,4 @@
-# BasicPharmacyManagement
+# SS Pharmacy
 This project is a pharmacy database dashboard using Streamlit, SQLite, and Python's SQLite3 library. It provides a user friendly interface for managing drugs, customers, and orders in a pharmacy, allowing the admin to perform various CRUD (Create, Read, Update, Delete) operations on the data base.
 
 ## Features
