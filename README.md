@@ -11,3 +11,14 @@ This project is a pharmacy database dashboard using Streamlit, SQLite, and Pytho
   - Add new customers with details such as name, password, email, state, and contact number. 
   - View all customers in a tabular format. 
   - Delete customers from the database. 
+  
+## Getting Started: 
+ <bold>To run this project</bold>
+  - Clone the repository: `git clone https://github.com/intrinsicvardhan/BasicPharmacyManagement.git`
+  - Run the application using `streamlit run app.py`
+
+## Modules Used
+ - Streamlit: a Python web framework for creating interactive web applications 
+ - SQLite: a lightweightm file-based database management system 
+ - SQLite3 library: a built-in library for interacting with SQLite databases
+ - Pandas: a data manipulation library for data analysis
