@@ -206,7 +206,7 @@ def admin():
                 st.dataframe(order_clean_df)
     elif choice == "About":
         st.subheader("DBMS Project")
-        st.subheader("Aaditya (102117021), Shubham(102117007), Rahul(102117011), Aryan(102117030)")
+        st.subheader("Aaditya (102117021), Shubham(102117007), Rahul(102117009), Aryan(102117030)")
 
 
 def getauthenicate(username, password):
@@ -228,7 +228,7 @@ def getauthenicate(username, password):
 def customer(username, password):
     if getauthenicate(username, password):
         print("In Customer")
-        st.title("Welcome to Pharmacy Store")
+        st.title("Welcome to SS Pharmacy")
 
         st.subheader("Your Order Details")
         order_result = order_view_data(username)
@@ -243,7 +243,7 @@ def customer(username, password):
 
         st.subheader("Drug: "+drug_result[0][0])
         img = Image.open('images/dolo650.jpg')
-        st.image(img, width=100, caption="Rs. 15/-")
+        st.image(img, width=100, caption="Rs. 60/-")
         dolo650 = st.slider(label="Quantity",min_value=0, max_value=5, key= 1)
         st.info("When to USE: " + str(drug_result[0][2]))
 
@@ -259,6 +259,38 @@ def customer(username, password):
         st.image(img, width=100, caption="Rs. 65/-")
         vicks = st.slider(label="Quantity",min_value=0, max_value=5, key=3)
         st.info("When to USE: " + str(drug_result[2][2]))
+        
+        st.subheader("Drug: " + drug_result[3][0])
+        img = Image.open('images/amoxicillin.jpg')
+        st.image(img, width=100, caption="Rs. 120/-")
+        amoxicillin = st.slider(label="Quantity",min_value=0, max_value=5, key=4)
+        st.info("When to USE: " + str(drug_result[3][2]))
+
+        st.subheader("Drug: " + drug_result[4][0])
+        img = Image.open('images/cefixime.jpg')
+        st.image(img, width=100, caption="Rs. 200/-")
+        cefixime = st.slider(label="Quantity",min_value=0, max_value=5, key=5)
+        st.info("When to USE: " + str(drug_result[4][2]))
+        
+        st.subheader("Drug: " + drug_result[5][0])
+        img = Image.open('images/cetrizine.jpg')
+        st.image(img, width=100, caption="Rs. 200/-")
+        cetrizine = st.slider(label="Quantity",min_value=0, max_value=5, key=6)
+        st.info("When to USE: " + str(drug_result[5][2]))
+        
+        st.subheader("Drug: " + drug_result[6][0])
+        img = Image.open('images/diazepam.jpg')
+        st.image(img, width=100, caption="Rs. 200/-")
+        diazepam = st.slider(label="Quantity",min_value=0, max_value=5, key=7)
+        st.info("When to USE: " + str(drug_result[6][2]))
+        
+        st.subheader("Drug: " + drug_result[7][0])
+        img = Image.open('images/lipbalm.jpg')
+        st.image(img, width=100, caption="Rs. 20/-")
+        lipbalm = st.slider(label="Quantity",min_value=0, max_value=5, key=8)
+        st.info("When to USE: " + str(drug_result[7][2]))
+
+        
 
 
 
@@ -271,7 +303,19 @@ def customer(username, password):
                 O_items += "Strepsils,"
             if int(vicks) > 0:
                 O_items += "Vicks"
-            O_Qty = str(dolo650)+str(',') + str(strepsils) + str(",") + str(vicks)
+            if int(amoxicillin)>0:
+                O_items+= "Amoxicillin"
+            if int(cefixime)>0:
+                O_items+= "Cefixime"
+            if int(cetrizine)>0:
+                O_items+= "Cetrizine"
+            if int(diazepam)>0:
+                O_items+= "diazepam"
+            if int(lipbalm)>0:
+                O_items+= "Lip-Balm"
+
+            O_Qty = str(dolo650)+str(',') + str(strepsils) + str(",") + str(vicks) + str(",") + str(amoxicillin) + str(",") + str(cefixime) + str(",") + str(cetrizine) + str(",") + str(diazepam) + str(",") + str(lipbalm)
+
 
             O_id = username + "#O" + str(random.randint(0,1000000))
             #order_add_data(O_Name, O_Items,O_Qty, O_id):
